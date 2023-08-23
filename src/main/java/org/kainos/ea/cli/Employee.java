@@ -1,6 +1,6 @@
 package org.kainos.ea.cli;
 
-public class Employee implements IPayable {
+public class Employee implements IPayable, IPermanent {
     private int employeeId;
     private String name;
     private double salary;
@@ -14,6 +14,11 @@ public class Employee implements IPayable {
     @Override
     public double calcPay() {
             return getSalary() / 12;
+    }
+
+    @Override
+    public double calcBonus(){
+        return salary * 0.1;
     }
 
     public int getEmployeeId() {

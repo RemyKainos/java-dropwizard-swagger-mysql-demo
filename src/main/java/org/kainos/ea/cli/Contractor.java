@@ -1,6 +1,6 @@
 package org.kainos.ea.cli;
 
-public class Contractor {
+public class Contractor implements IPayable {
     private String name;
     private double dailyRate;
     private int monthlyDaysWorked;
@@ -33,5 +33,10 @@ public class Contractor {
 
     public void setMonthlyDaysWorked(int monthlyDaysWorked) {
         this.monthlyDaysWorked = monthlyDaysWorked;
+    }
+
+    @Override
+    public double calcPay() {
+        return getDailyRate() * getMonthlyDaysWorked();
     }
 }
